@@ -22,8 +22,14 @@ app.post("/post", (req, res) => {
 });
 
 app.listen(3000, () => {
-    console.log("im listening in port 3000");
+    
 });
+app.get("/findSummation/:n1/:n2",(req,res)=>{
+     const sum=Number(req.params.n1)+Number(req.params.n2)
+     
+      res.send(sum);
+
+})
 
 
   
