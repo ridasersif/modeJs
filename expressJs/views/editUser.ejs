@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title><%= mytitle %></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 15px;
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1><%= mytitle %></h1>
+
+  <form action="/users/<%= user._id %>?_method=PUT" method="POST">
+    <label for="firstName">Prénom :</label>
+    <input type="text" id="firstName" name="firstName" value="<%= user.firstName || '' %>" required>
+
+    <label for="lastName">Nom :</label>
+    <input type="text" id="lastName" name="lastName" value="<%= user.lastName || '' %>" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" value="<%= user.email || '' %>" required>
+
+    <label for="phone">Téléphone :</label>
+    <input type="tel" id="phone" name="phone" value="<%= user.phone || '' %>" required>
+
+    <button type="submit">Mettre à jour</button>
+  </form>
+
+  <a href="/users">← Retour à la liste des utilisateurs</a>
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Formulaire Utilisateur</title>
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      transition: border-color 0.3s;
+    }
+
+    input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<h1><%=  %></h1>
+  <form class="form-container" action="/" method="POST">
+    <h2>Créer un utilisateur</h2>
+
+    <label for="firstName">Prénom</label>
+    <input type="text" name="firstName" id="firstName" required />
+
+    <label for="lastName">Nom</label>
+    <input type="text" name="lastName" id="lastName" required />
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required />
+
+    <label for="phone">Téléphone</label>
+    <input type="tel" name="phone" id="phone" required />
+
+    <button type="submit">Envoyer vers la base de données</button>
+  </form>
+ 
+</body>
+</html>
